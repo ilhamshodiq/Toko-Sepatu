@@ -6,9 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- bootstrap 5.2 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- fontawesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- css buatan sendiri -->
     <link rel="stylesheet" href="../css/style_dashboard.css">
 
@@ -18,8 +21,7 @@
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"> Ini Hospital Management</a>
-            <a href="../logout.php" class="btn btn-outline-danger btn-sm" role="button">LOG OUT</a>
+            <a class="navbar-brand" href="#"> Admin Toko Sepatu</a>
         </div>
     </nav>
 
@@ -27,9 +29,15 @@
         <!-- Sidebar -->
         <div class="bg-dark" id="sidebar-wrapper">
             <div class="list-group list-group-flush my-3">
-                <a href="menu_dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text"><i class="fas fa-home me-2"></i>Dashboard</a>
-                <a href="menu_sepatu.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-pills me-2"></i>Sepatu</a>
-                <a href="menu_pemasok.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"><i class="fas fa-door-open me-2"></i>Pemasok</a>
+                <a href="menu_dashboard.php"
+                    class="list-group-item list-group-item-action bg-transparent second-text"><i
+                        class="fas fa-home me-2"></i>Dashboard</a>
+                <a href="menu_sepatu.php"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-database me-2"></i>Sepatu</a>
+                <a href="menu_pemasok.php"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"><i
+                        class="fas fa-database me-2"></i>Pemasok</a>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -59,25 +67,27 @@
                     </thead>
                     <tbody>
                         <?php while ($data = $query->fetch_array()) { ?>
-                            <tr>
-                                <th scope="row"><?php echo $no++ ?></th>
-                                <td><?php echo $data['username'] ?></td>
-                                <td><?php echo $data['nama_pasien'] ?></td>
-                                <td><?php echo $data['jenis_kelamin'] ?></td>
-                                <td><?php echo $data['alamat'] ?></td>
-                                <td><?php echo $data['no_hp'] ?></td>
-                                <td>
-                                    <form action="admin_edit_akunpasien.php?id_pasien=<?php echo $data['id_pasien'] ?>" method="post">
-                                        <input type="hidden" name="username">
-                                        <input class="btn btn-success btn-sm" type="submit" value="edit">
-                                    </form>
-                                    <p></p>
-                                    <form action="aksi/aksi_hapuspasien.php" method="post">
-                                        <input type="hidden" name="username" value="<?php echo $data['username'] ?>">
-                                        <input class="btn btn-danger btn-sm" type="submit" name="hapus" value="hapus" onClick="return confirm('Apakah Anda ingin menghapus akun?')">
-                                    </form>
-                                </td>
-                            </tr>
+                        <tr>
+                            <th scope="row"><?php echo $no++ ?></th>
+                            <td><?php echo $data['username'] ?></td>
+                            <td><?php echo $data['nama_pasien'] ?></td>
+                            <td><?php echo $data['jenis_kelamin'] ?></td>
+                            <td><?php echo $data['alamat'] ?></td>
+                            <td><?php echo $data['no_hp'] ?></td>
+                            <td>
+                                <form action="admin_edit_akunpasien.php?id_pasien=<?php echo $data['id_pasien'] ?>"
+                                    method="post">
+                                    <input type="hidden" name="username">
+                                    <input class="btn btn-success btn-sm" type="submit" value="edit">
+                                </form>
+                                <p></p>
+                                <form action="aksi/aksi_hapuspasien.php" method="post">
+                                    <input type="hidden" name="username" value="<?php echo $data['username'] ?>">
+                                    <input class="btn btn-danger btn-sm" type="submit" name="hapus" value="hapus"
+                                        onClick="return confirm('Apakah Anda ingin menghapus akun?')">
+                                </form>
+                            </td>
+                        </tr>
                         <?php } ?>
                     </tbody>
                 </table>
@@ -137,14 +147,16 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
     <script>
-        var el = document.getElementById("wrapper");
-        var toggleButton = document.getElementById("menu-toggle");
+    var el = document.getElementById("wrapper");
+    var toggleButton = document.getElementById("menu-toggle");
 
-        toggleButton.onclick = function() {
-            el.classList.toggle("toggled");
-        };
+    toggleButton.onclick = function() {
+        el.classList.toggle("toggled");
+    };
     </script>
 </body>
 

@@ -102,6 +102,6 @@ class Client
 
 
 //nb ini ubah localhost pake ip sesuai dengan ip servernya
-$url = 'http://localhost/Toko-Sepatu-Design-Web-Responsive--master/server/server_api_sepatu.php';
+$url = 'http://192.168.100.5/Toko-Sepatu-Design-Web-Responsive--master/server/server_api_sepatu.php';
 // buat objek baru dari class Client
 $abc = new Client($url);
