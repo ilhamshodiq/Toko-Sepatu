@@ -23,7 +23,7 @@ include "Client.php";
                 <a href="football.html" class="posisidropdown2">Football</a>
             </div>
         </div>
-        <a href="index.html">Beranda</a>
+        <a href="index.html"><b> Beranda</b></a>
         <img src="img/logo/logo.png" alt="">
     </div>
 
@@ -47,9 +47,10 @@ include "Client.php";
                 $data_array = $abc->tampil_semua_data();
                 foreach ($data_array as $r) {
                 ?> <tr>
-                        <td class="opacity"><a href="lihatrunning.html"><?= $r->nama; ?><br><img src="<?= $r->gambar_sepatu; ?>"><br><?= $r->harga; ?></a></td>
-                    </tr>
-                    <!-- <tr align="center">
+                    <td class="opacity"><a href="lihatrunning.html"><?= $r->nama; ?><br><img
+                                src="<?= $r->gambar_sepatu; ?>"><br><?= $r->harga; ?></a></td>
+                </tr>
+                <!-- <tr align="center">
                     <td class="opacity"><a href="lihatrunning.html">Nike Epic React Flyknit<br><img
                                 src="img/running/running4-nike epic react flyknit.png"><br>Rp 450.000</a></td>
                     <td class="opacity"><a href="lihatrunning1.html">Nike Air Vapormax <br><img
