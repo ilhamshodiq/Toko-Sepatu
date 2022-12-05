@@ -19,7 +19,7 @@ class Client
         unset($data);
     }
 
-    public function tampil_semua_data()
+    public function tampil_semua_data_sepatu()
     {
         $client = curl_init($this->url);
         curl_setopt($client, CURLOPT_RETURNTRANSFER, 1);
@@ -100,6 +100,8 @@ class Client
     }
 }
 
-$url = 'http://localhost/Toko-Sepatu-Design-Web-Responsive--master/server/server.php';
+
+//nb ini ubah localhost pake ip sesuai dengan ip servernya
+$url = 'http://localhost/Toko-Sepatu-Design-Web-Responsive--master/server/server_api_sepatu.php';
 // buat objek baru dari class Client
 $abc = new Client($url);
