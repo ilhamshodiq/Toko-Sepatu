@@ -47,8 +47,15 @@ class Client
     public function tambah_data($data)
     {
         $data = '{  "id_sepatu":"' . $data['id_sepatu'] . '",
-                    "nama":"' . $data['nama'] . '",
-                    "aksi":"' . $data['aksi'] . '"
+            "id_pemasok":"' . $data['id_pemasok'] . '",
+            "nama":"' . $data['nama'] . '",
+            "gambar_sepatu":"' . $data['gambar_sepatu'] . '",
+            "ukuran":"' . $data['ukuran'] . '",
+            "id_jenis":"' . $data['id_jenis'] . '",
+            "warna":"' . $data['warna'] . '",
+            "stok":"' . $data['stok'] . '",
+            "harga":"' . $data['harga'] . '",                    
+            "aksi":"' . $data['aksi'] . '"
                 }';
         $c = curl_init();
         curl_setopt($c, CURLOPT_URL, $this->url);
@@ -63,7 +70,14 @@ class Client
     public function ubah_data($data)
     {
         $data = '{  "id_sepatu":"' . $data['id_sepatu'] . '",
+                    "id_pemasok":"' . $data['id_pemasok'] . '",
                     "nama":"' . $data['nama'] . '",
+                    "gambar_sepatu":"' . $data['gambar_sepatu'] . '",
+                    "ukuran":"' . $data['ukuran'] . '",
+                    "id_jenis":"' . $data['id_jenis'] . '",
+                    "warna":"' . $data['warna'] . '",
+                    "stok":"' . $data['stok'] . '",
+                    "harga":"' . $data['harga'] . '",                    
                     "aksi":"' . $data['aksi'] . '"
                 }';
         $c = curl_init();
@@ -102,6 +116,6 @@ class Client
 
 
 //nb ini ubah localhost pake ip sesuai dengan ip servernya
-$url = 'http://192.168.100.5/Toko-Sepatu-Design-Web-Responsive--master/server/server_api_sepatu.php';
+$url = 'localhost/Toko-Sepatu-Design-Web-Responsive--master/server/server_api_sepatu.php';
 // buat objek baru dari class Client
 $abc = new Client($url);

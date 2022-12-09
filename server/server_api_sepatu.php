@@ -62,6 +62,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $data = $abc->tampil_semua_data_sepatu();
         echo json_encode($data);
     }
-    
+
     unset($postdata, $data, $id_sepatu, $abc);
 }

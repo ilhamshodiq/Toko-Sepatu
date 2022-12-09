@@ -1,8 +1,6 @@
 <?php
 include "../client/Client_sepatu.php";
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,14 +15,13 @@ include "../client/Client_sepatu.php";
     <!-- css buatan sendiri -->
     <link rel="stylesheet" href="../css/style_dashboard.css">
 
-    <title>Menu Data Sepatu</title>
+    <title>Menu Data Pemasok</title>
 </head>
 
 <body>
-
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href=""> Admin Toko Sepatu</a>
+            <a class="navbar-brand" href="#"> Admin Toko Sepatu</a>
         </div>
     </nav>
 
@@ -32,7 +29,7 @@ include "../client/Client_sepatu.php";
         <!-- Sidebar -->
         <div class="bg-dark" id="sidebar-wrapper">
             <div class="list-group list-group-flush my-3">
-                <a href="menu_dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text "><i class="fas fa-home me-2"></i>Dashboard</a>
+                <a href="menu_dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text"><i class="fas fa-home me-2"></i>Dashboard</a>
                 <a href="menu_sepatu.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"><i class="fas fa-database me-2"></i>Sepatu</a>
                 <a href="menu_pemasok.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-database me-2"></i>Pemasok</a>
             </div>
@@ -44,61 +41,60 @@ include "../client/Client_sepatu.php";
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0">Akun Admin</h2>
+                    <h2 class="fs-2 m-0">Sepatu</h2>
                 </div>
             </nav>
             <div class="container-sm">
                 <hr class="border-light border-2 opacity-75">
-                <a class="btn btn-primary mb-2 btn-sm" href="menu_tambah_sepatu.php" role="button">Tambah</a>
-                <table class="table table-light table-striped rounded table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col" width="50">#</th>
-                            <th scope="col">id pemasok</th>
-                            <th scope="col">Nama Sepatu</th>
-                            <th scope="col">Gambar Sepatu</th>
-                            <th scope="col">Ukuran</th>
-                            <th scope="col">Jenis</th>
-                            <th scope="col">Warna</th>
-                            <th scope="col">Stok</th>
-                            <th scope="col">harga</th>
-                            <th scope="col" width="100">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $no = 1;
-                        $data_array = $abc->tampil_semua_data_sepatu();
-                        foreach ($data_array as $r) {
-                        ?>
-                            <tr>
-                                <th scope="row"><?= $no++ ?></th>
-                                <td> <?= $r->id_pemasok; ?></td>
-                                <td> <?= $r->nama; ?></td>
-                                <td><img width="100" src="<?= $r->gambar_sepatu; ?>"></td>
-                                <td> <?= $r->ukuran; ?></td>
-                                <td> <?= $r->id_jenis; ?></td>
-                                <td> <?= $r->warna; ?></td>
-                                <td> <?= $r->stok; ?></td>
-                                <td> Rp.<?= $r->harga; ?></td>
+                <?php
+                $id_sepatu = $_GET['id_sepatu'];
+                //  $data_array = $abc->tampil_data($id_sepatu);            
+                $r = $abc->tampil_data($id_sepatu);
+                ?>
+                <form name="form" method="post" action="../client/proses_sepatu.php">
+                    <div class="row">
+                        <input type="hidden" name="aksi" value="ubah" />
+                        <input type="hidden" name="id_sepatu" value="<?= $r->id_sepatu ?>" />
+                        <div class="mb-3 col-md-6">
+                            <label for="input_nama_sepatu" class="form-label">Nama Sepatu</label>
+                            <input type="text" class="form-control" id="input_nama_sepatu" name="nama" value="<?= $r->nama ?>">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="input_nama_sepatu" class="form-label">Id Pemasok</label>
+                            <input type="text" class="form-control" id="input_nama_sepatu" name="id_pemasok" value="<?= $r->id_pemasok ?>">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="input_gambar_sepatu" class="form-label">Gambar Sepatu</label>
+                            <input type="text" class="form-control" id="input_gambar_sepatu" name="gambar_sepatu" value="<?= $r->gambar_sepatu ?>">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="input_ukuran" class="form-label">Ukuran</label>
+                            <input type="text" class="form-control" id="input_ukuran" name="ukuran" value="<?= $r->ukuran ?>">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="input_id_jenis" class="form-label">Id Jenis</label>
+                            <input type="text" class="form-control" id="input_id_jenis" name="id_jenis" value="<?= $r->id_jenis ?>">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="input_warna" class="form-label">Warna</label>
+                            <input type="text" class="form-control" id="input_warna" name="warna" value="<?= $r->warna ?>">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="input_stok" class="form-label">Stok</label>
+                            <input type="text" class="form-control" id="input_stok" name="stok" value="<?= $r->stok ?>">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="input_harga" class="form-label">Harga</label>
+                            <input type="text" class="form-control" id="input_harga" name="harga" value="<?= $r->harga ?>">
+                        </div>
+                    </div>
+                    <input class="btn btn-primary" type="submit" name="ubah" value="Edit">
+                    <a class="btn btn-danger" href="admin_obat.php" role="button">Cancel</a>
+                </form>
+                <?php unset($r);
 
-                                <td>
-                                    <form action="menu_edit_sepatu.php?id_sepatu=<?php echo $r->id_sepatu ?>" method="post">
-                                        <input class="btn btn-success btn-sm" type="submit" value="edit">
-                                    </form>
-                                    <p></p>
-                                    <form action="../client/proses_sepatu.php?aksi=hapus&id_sepatu=<?php echo $r->id_sepatu ?>" method="post">
-                                        <input class="btn btn-danger btn-sm" type="submit" name="hapus" value="hapus" onClick="return confirm('Apakah Anda ingin menghapus data Penghapus?')">
-                                    </form>
-                                </td>
-                            </tr>
-                        <?php
+                ?>
 
-                        }
-                        unset($data_array, $r, $no);
-                        ?>
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>
@@ -107,7 +103,6 @@ include "../client/Client_sepatu.php";
     <!-- <footer class="bg-dark pb-3 pt-4">
         <p class="text-center text-white bg-dark">Created with love by Ilham Shodiq</p>
     </footer> -->
-
     <footer class="bg-dark text-center text-white p-4">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
@@ -149,9 +144,6 @@ include "../client/Client_sepatu.php";
             </div>
         </div>
     </footer>
-
-
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">

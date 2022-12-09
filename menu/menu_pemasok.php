@@ -50,7 +50,7 @@ include "../client/Client_pemasok.php";
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0">Akun Pasien</h2>
+                    <h2 class="fs-2 m-0">Pemasok</h2>
                 </div>
             </nav>
             <div class="container-sm">
@@ -78,7 +78,7 @@ include "../client/Client_pemasok.php";
                             <td> <?= $r->nama_pemasok; ?></td>
                             <td> <?= $r->jenis_kelamin; ?></td>
                             <td> <?= $r->alamat; ?></td>
-                            <td> <?= $r->no_hp; ?></td>
+                            <td> <?= $r->no_telp; ?></td>
                             <td>
                                 <form action="menu_edit_pemasok.php?id_pemasok=<?php echo $r->id_pemasok?>"
                                     method="post">
