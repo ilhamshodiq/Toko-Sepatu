@@ -20,7 +20,7 @@ include "../client/Client_sepatu.php";
     <!-- css buatan sendiri -->
     <link rel="stylesheet" href="../css/style_dashboard.css">
 
-    <title>Menu Akun Admin</title>
+    <title>Menu Data Sepatu</title>
 </head>
 
 <body>
