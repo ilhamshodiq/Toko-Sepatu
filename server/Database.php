@@ -31,7 +31,7 @@ class Database
         $query->closeCursor();
         unset($data);
     }
-    
+
     public function tampil_semua_data_pemasok()
     {
         $query2 = $this->conn->prepare("select id_pemasok, nama_pemasok, jenis_kelamin, alamat, no_telp from pemasok order by id_pemasok");

@@ -57,8 +57,8 @@ include "../client/Client_pemasok.php";
                 <hr class="border-light border-2 opacity-75">
                 <?php
                 $id_pemasok = $_GET['id_pemasok'];
-                //  $data_array = $abc->tampil_data($id_pemasok);            
-                $r = $abc->tampil_data($id_pemasok);
+                //  $data_array = $abcd->tampil_data($id_pemasok);            
+                $r = $abcd->tampil_data($id_pemasok);
             ?>
                 <form name="form" method="post" action="../client/proses_pemasok.php">
                     <div class="row">

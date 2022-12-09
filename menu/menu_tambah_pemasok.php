@@ -73,7 +73,7 @@
                         </div>
                         <div class="mb-3 col-md-6">
                             <label for="input_no_telp" class="form-label">No Telepon</label>
-                            <input type="text" class="form-control" id="input_no_tel" name="no_tel">
+                            <input type="text" class="form-control" id="input_no_tel" name="no_telp">
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary" name="simpan">Submit</button>

@@ -70,7 +70,7 @@ include "../client/Client_pemasok.php";
                     <tbody>
                         <?php
                         $no = 1;
-                        $data_array = $abc->tampil_semua_data_pemasok();
+                        $data_array = $abcd->tampil_semua_data_pemasok();
                         foreach ($data_array as $r) {
                         ?>
                         <tr>

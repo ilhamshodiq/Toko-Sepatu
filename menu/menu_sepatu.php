@@ -88,7 +88,7 @@ include "../client/Client_sepatu.php";
                                     </form>
                                     <p></p>
                                     <form action="../client/proses_sepatu.php?aksi=hapus&id_sepatu=<?php echo $r->id_sepatu ?>" method="post">
-                                        <input class="btn btn-danger btn-sm" type="submit" name="hapus" value="hapus" onClick="return confirm('Apakah Anda ingin menghapus data Penghapus?')">
+                                        <input class="btn btn-danger btn-sm" type="submit" name="hapus" value="hapus" onClick="return confirm('Apakah Anda ingin menghapus data Sepatu?')">
                                     </form>
                                 </td>
                             </tr>

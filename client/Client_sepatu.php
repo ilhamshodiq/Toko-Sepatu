@@ -1,6 +1,6 @@
 <?php
 error_reporting(0); // error ditampilkan
-class Client
+class ClientSepatu
 {
     private $url;
 
@@ -116,6 +116,6 @@ class Client
 
 
 //nb ini ubah localhost pake ip sesuai dengan ip servernya
-$url = 'localhost/toko_sepatu/server/server_api_sepatu.php';
+$url = 'http://localhost/Toko-Sepatu-Design-Web-Responsive--master/server/server_api_sepatu.php';
 // buat objek baru dari class Client
-$abc = new Client($url);
+$abc = new ClientSepatu($url);
