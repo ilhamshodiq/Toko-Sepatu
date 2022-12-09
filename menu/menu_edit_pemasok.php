@@ -50,74 +50,47 @@ include "../client/Client_pemasok.php";
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0">Akun Pasien</h2>
+                    <h2 class="fs-2 m-0">Pemasok</h2>
                 </div>
             </nav>
             <div class="container-sm">
                 <hr class="border-light border-2 opacity-75">
-                <a class="btn btn-primary mb-2 btn-sm" href="admin_tambah_akunpasien.php" role="button">Tambah</a>
-                <table class="table table-light table-striped rounded table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col" width="50">No</th>
-                            <th scope="col">Nama Pemasok</th>
-                            <th scope="col">Jenis kelamin</th>
-                            <th scope="col">Alamat</th>
-                            <th scope="col">No HP</th>
-                            <th scope="col">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $no = 1;
-                        $data_array = $abc->tampil_semua_data_pemasok();
-                        foreach ($data_array as $r) {
-                        ?>
-                        <tr>
-                            <th scope="row"><?= $no++ ?></th>
-                            <td> <?= $r->nama_pemasok; ?></td>
-                            <td> <?= $r->jenis_kelamin; ?></td>
-                            <td> <?= $r->alamat; ?></td>
-                            <td> <?= $r->no_hp; ?></td>
-                            <td>
-                                <form action="menu_edit_pemasok.php?id_pemasok=<?php echo $r->id_pemasok?>"
-                                    method="post">
-                                    <input type="hidden" name="username_admin">
-                                    <input class="btn btn-success btn-sm" type="submit" value="edit">
-                                </form>
-                                <p></p>
-                                <form action="aksi/aksi_hapusadmin.php" method="post">
-                                    <input type="hidden" name="username_admin" value="<?php echo $data['username'] ?>">
-                                    <input class="btn btn-danger btn-sm" type="submit" name="hapus" value="hapus"
-                                        onClick="return confirm('Apakah Anda ingin menghapus akun?')">
-                                </form>
-                            </td>
-                        </tr>
-                        <?php
-                            
-                        }
-                        unset($data_array, $r, $no);
-                        
-                        // $data_array = $abc->tampil_data(1);
-                        
-                        ?>
+                <?php
+                $id_pemasok = $_GET['id_pemasok'];
+                //  $data_array = $abc->tampil_data($id_pemasok);            
+                $r = $abc->tampil_data($id_pemasok);
+            ?>
+                <form name="form" method="post" action="../client/proses.php">
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <label for="input_nama_pemasok" class="form-label">Nama Pemasok</label>
+                            <input type="text" class="form-control" id="input_nama_pemasok" name="nama_pemasok"
+                                value="<?=$r->nama_pemasok?>">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="input_jenis_kelamin" class="form-label">Jenis Kelamin</label>
+                            <input type="text" class="form-control" id="input_jenis_kelamin" name="harga"
+                                value="<?=$r->jenis_kelamin?>">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="input_alamat" class="form-label">Alamat</label>
+                            <input type="text" class="form-control" id="input_alamat" name="alamat"
+                                value="<?=$r->alamat?>">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="input_telp" class="form-label">No Telepon</label>
+                            <input type="text" class="form-control" id="input_no_telp" name="no_telp"
+                                value="<?=$r->no_telp?>">
+                        </div>
+                    </div>
+                    <input class="btn btn-primary" type="submit" name="ubah" value="Edit">
+                    <a class="btn btn-danger" href="admin_obat.php" role="button">Cancel</a>
+                </form>
+                <?php unset($r);
+            
+            ?>
 
-                    <tbody>
-                </table>
-                <!-- <div class="row">
-                    <div class="mb-3 col-md-6">
-                        <label for="input_nama_pemasok" class="form-label">Nama Pemasok</label>
-                        <input type="text" class="form-control" id="input_nama_pemasok" name="nama_pemasok"
-                            value="<?=$data_array->nama_pemasok?>">
-                    </div>
-                    <div class="mb-3 col-md-6">
-                        <label for="input_nama_pemasok" class="form-label">Nama Pemasok</label>
-                        <input type="text" class="form-control" id="input_nama_pemasok" name="nama_pemasok"
-                            value="<?=$data_array->alamat?>">
-                    </div>
-                </div> -->
             </div>
-
         </div>
     </div>
     <!-- /#page-content-wrapper -->
