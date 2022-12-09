@@ -50,12 +50,12 @@ include "../client/Client_pemasok.php";
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0">Akun Pasien</h2>
+                    <h2 class="fs-2 m-0">Pemasok</h2>
                 </div>
             </nav>
             <div class="container-sm">
                 <hr class="border-light border-2 opacity-75">
-                <a class="btn btn-primary mb-2 btn-sm" href="admin_tambah_akunpasien.php" role="button">Tambah</a>
+                <a class="btn btn-primary mb-2 btn-sm" href="menu_tambah_pemasok.php" role="button">Tambah</a>
                 <table class="table table-light table-striped rounded table-hover">
                     <thead>
                         <tr>
@@ -63,7 +63,7 @@ include "../client/Client_pemasok.php";
                             <th scope="col">Nama Pemasok</th>
                             <th scope="col">Jenis kelamin</th>
                             <th scope="col">Alamat</th>
-                            <th scope="col">No HP</th>
+                            <th scope="col">No Telepon</th>
                             <th scope="col">Aksi</th>
                         </tr>
                     </thead>
@@ -78,7 +78,7 @@ include "../client/Client_pemasok.php";
                             <td> <?= $r->nama_pemasok; ?></td>
                             <td> <?= $r->jenis_kelamin; ?></td>
                             <td> <?= $r->alamat; ?></td>
-                            <td> <?= $r->no_hp; ?></td>
+                            <td> <?= $r->no_telp; ?></td>
                             <td>
                                 <form action="menu_edit_pemasok.php?id_pemasok=<?php echo $r->id_pemasok?>"
                                     method="post">
@@ -86,8 +86,9 @@ include "../client/Client_pemasok.php";
                                     <input class="btn btn-success btn-sm" type="submit" value="edit">
                                 </form>
                                 <p></p>
-                                <form action="aksi/aksi_hapusadmin.php" method="post">
-                                    <input type="hidden" name="username_admin" value="<?php echo $data['username'] ?>">
+                                <form
+                                    action="../client/proses_pemasok.php?aksi=hapus&id_pemasok=<?php echo $r->id_pemasok ?>"
+                                    method="post">
                                     <input class="btn btn-danger btn-sm" type="submit" name="hapus" value="hapus"
                                         onClick="return confirm('Apakah Anda ingin menghapus akun?')">
                                 </form>
@@ -96,35 +97,16 @@ include "../client/Client_pemasok.php";
                         <?php
                             
                         }
-                        unset($data_array, $r, $no);
-                        
-                        // $data_array = $abc->tampil_data(1);
+                        unset($data_array, $r, $no);                                             
                         
                         ?>
 
                     <tbody>
                 </table>
-                <!-- <div class="row">
-                    <div class="mb-3 col-md-6">
-                        <label for="input_nama_pemasok" class="form-label">Nama Pemasok</label>
-                        <input type="text" class="form-control" id="input_nama_pemasok" name="nama_pemasok"
-                            value="<?=$data_array->nama_pemasok?>">
-                    </div>
-                    <div class="mb-3 col-md-6">
-                        <label for="input_nama_pemasok" class="form-label">Nama Pemasok</label>
-                        <input type="text" class="form-control" id="input_nama_pemasok" name="nama_pemasok"
-                            value="<?=$data_array->alamat?>">
-                    </div>
-                </div> -->
             </div>
 
         </div>
     </div>
-    <!-- /#page-content-wrapper -->
-
-    <!-- <footer class="bg-dark pb-3 pt-4">
-        <p class="text-center text-white bg-dark">Created with love by Ilham Shodiq</p>
-    </footer> -->
     <footer class="bg-dark text-center text-white p-4">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">

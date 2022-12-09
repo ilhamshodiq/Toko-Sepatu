@@ -1,6 +1,3 @@
-<?php
-include "../client/Client_pemasok.php";
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,14 +14,14 @@ include "../client/Client_pemasok.php";
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- css buatan sendiri -->
     <link rel="stylesheet" href="../css/style_dashboard.css">
-
-    <title>Menu Data Pemasok</title>
+    <title>Menu Jadwal Dokter</title>
 </head>
 
 <body>
+
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"> Admin Toko Sepatu</a>
+            <a class="navbar-brand" href=""> Admin Toko Sepatu</a>
         </div>
     </nav>
 
@@ -33,13 +30,13 @@ include "../client/Client_pemasok.php";
         <div class="bg-dark" id="sidebar-wrapper">
             <div class="list-group list-group-flush my-3">
                 <a href="menu_dashboard.php"
-                    class="list-group-item list-group-item-action bg-transparent second-text"><i
+                    class="list-group-item list-group-item-action bg-transparent second-text "><i
                         class="fas fa-home me-2"></i>Dashboard</a>
                 <a href="menu_sepatu.php"
-                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"><i
                         class="fas fa-database me-2"></i>Sepatu</a>
                 <a href="menu_pemasok.php"
-                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"><i
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-database me-2"></i>Pemasok</a>
             </div>
         </div>
@@ -50,48 +47,37 @@ include "../client/Client_pemasok.php";
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0">Pemasok</h2>
+                    <h2 class="fs-2 m-0">Akun Admin</h2>
                 </div>
             </nav>
             <div class="container-sm">
                 <hr class="border-light border-2 opacity-75">
-                <?php
-                $id_pemasok = $_GET['id_pemasok'];
-                //  $data_array = $abc->tampil_data($id_pemasok);            
-                $r = $abc->tampil_data($id_pemasok);
-            ?>
-                <form name="form" method="post" action="../client/proses_pemasok.php">
+                <form action="../client/proses_pemasok.php" method="POST">
                     <div class="row">
-                        <input type="hidden" name="aksi" value="ubah" />
-                        <input type="hidden" name="id_pemasok" value="<?= $r->id_pemasok ?>" />
+                        <input type="hidden" name="aksi" value="tambah" ?>
+                        <div class="mb-3 col-md-6">
+                            <label for="input_id_pemasok" class="form-label">Id Pemasok</label>
+                            <input type="text" class="form-control" id="input_id_pemasok" name="id_pemasok">
+                        </div>
                         <div class="mb-3 col-md-6">
                             <label for="input_nama_pemasok" class="form-label">Nama Pemasok</label>
-                            <input type="text" class="form-control" id="input_nama_pemasok" name="nama_pemasok"
-                                value="<?=$r->nama_pemasok?>">
+                            <input type="text" class="form-control" id="input_nama_pemasok" name="nama_pemasok">
                         </div>
                         <div class="mb-3 col-md-6">
                             <label for="input_jenis_kelamin" class="form-label">Jenis Kelamin</label>
-                            <input type="text" class="form-control" id="input_jenis_kelamin" name="jenis_kelamin"
-                                value="<?=$r->jenis_kelamin?>">
+                            <input type="text" class="form-control" id="input_jenis_kelamin" name="jenis_kelamin">
                         </div>
                         <div class="mb-3 col-md-6">
                             <label for="input_alamat" class="form-label">Alamat</label>
-                            <input type="text" class="form-control" id="input_alamat" name="alamat"
-                                value="<?=$r->alamat?>">
+                            <input type="text" class="form-control" id="input_alamat" name="alamat">
                         </div>
                         <div class="mb-3 col-md-6">
-                            <label for="input_telp" class="form-label">No Telepon</label>
-                            <input type="text" class="form-control" id="input_no_telp" name="no_telp"
-                                value="<?=$r->no_telp?>">
+                            <label for="input_no_telp" class="form-label">No Telepon</label>
+                            <input type="text" class="form-control" id="input_no_tel" name="no_tel">
                         </div>
                     </div>
-                    <input class="btn btn-primary" type="submit" name="ubah" value="Edit">
-                    <a class="btn btn-danger" href="admin_obat.php" role="button">Cancel</a>
+                    <button type="submit" class="btn btn-primary" name="simpan">Submit</button>
                 </form>
-                <?php unset($r);
-            
-            ?>
-
             </div>
         </div>
     </div>
@@ -100,7 +86,8 @@ include "../client/Client_pemasok.php";
     <!-- <footer class="bg-dark pb-3 pt-4">
         <p class="text-center text-white bg-dark">Created with love by Ilham Shodiq</p>
     </footer> -->
-    <footer class="bg-dark text-center text-white p-4">
+
+    <footer class="text-center text-white p-4" style="background-color: #22333E;">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <ul class="list-inline text-center">
@@ -108,7 +95,7 @@ include "../client/Client_pemasok.php";
                         <a href="mailto:ilhambheh@gmail.com">
                             <span class="fa-stack fa-lg">
                                 <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"> </i>
                             </span>
                         </a>
                     </li>

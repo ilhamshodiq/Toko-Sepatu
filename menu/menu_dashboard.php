@@ -20,17 +20,22 @@ include "../client/Client_sepatu.php";
 
     <title>Dashboard Admin</title>
 </head>
+<!-- banyak data pemasok -->
 <?php
                         $no1 = 0;
                         $data_array = $abc->tampil_semua_data_sepatu();
                         foreach ($data_array as $r) {
                         ?>
 
+
 <?php
                             $no1++;
                         }
                         unset($data_array, $r);
                         ?>
+
+<!-- banyak data sepatu -->
+
 
 <body>
 
@@ -74,7 +79,7 @@ include "../client/Client_sepatu.php";
                                     <div class="d-flex">
                                         <div class="mt-2">
                                             <h6 class="" style="color: black;">Total Pemasok</h6>
-                                            <h2 class=" mb-0 number-font" style="color: black;">44,278</h2>
+                                            <h2 class=" mb-0 number-font" style="color: black;"></h2>
                                         </div>
                                         <div class="ms-auto">
                                             <div class="chart-wrapper mt-1">
@@ -154,7 +159,7 @@ include "../client/Client_sepatu.php";
                         </a>
                     </li>
                 </ul>
-                <div class="small text-center">Created with love by Ilham Shodiq</div>
+                <div class="small text-center">Created by Toko Sepatu</div>
             </div>
         </div>
     </footer>

@@ -1,5 +1,5 @@
 <?php
-include "../client/Client_pemasok.php";
+include "../client/Client_sepatu.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,10 +36,10 @@ include "../client/Client_pemasok.php";
                     class="list-group-item list-group-item-action bg-transparent second-text"><i
                         class="fas fa-home me-2"></i>Dashboard</a>
                 <a href="menu_sepatu.php"
-                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"><i
                         class="fas fa-database me-2"></i>Sepatu</a>
                 <a href="menu_pemasok.php"
-                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"><i
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-database me-2"></i>Pemasok</a>
             </div>
         </div>
@@ -50,47 +50,66 @@ include "../client/Client_pemasok.php";
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0">Pemasok</h2>
+                    <h2 class="fs-2 m-0">Sepatu</h2>
                 </div>
             </nav>
             <div class="container-sm">
                 <hr class="border-light border-2 opacity-75">
                 <?php
-                $id_pemasok = $_GET['id_pemasok'];
-                //  $data_array = $abc->tampil_data($id_pemasok);            
-                $r = $abc->tampil_data($id_pemasok);
-            ?>
-                <form name="form" method="post" action="../client/proses_pemasok.php">
+                $id_sepatu = $_GET['id_sepatu'];
+                //  $data_array = $abc->tampil_data($id_sepatu);            
+                $r = $abc->tampil_data($id_sepatu);
+                ?>
+                <form name="form" method="post" action="../client/proses_sepatu.php">
                     <div class="row">
                         <input type="hidden" name="aksi" value="ubah" />
-                        <input type="hidden" name="id_pemasok" value="<?= $r->id_pemasok ?>" />
+                        <input type="hidden" name="id_sepatu" value="<?= $r->id_sepatu ?>" />
                         <div class="mb-3 col-md-6">
-                            <label for="input_nama_pemasok" class="form-label">Nama Pemasok</label>
-                            <input type="text" class="form-control" id="input_nama_pemasok" name="nama_pemasok"
-                                value="<?=$r->nama_pemasok?>">
+                            <label for="input_nama_sepatu" class="form-label">Nama Sepatu</label>
+                            <input type="text" class="form-control" id="input_nama_sepatu" name="nama"
+                                value="<?= $r->nama ?>">
                         </div>
                         <div class="mb-3 col-md-6">
-                            <label for="input_jenis_kelamin" class="form-label">Jenis Kelamin</label>
-                            <input type="text" class="form-control" id="input_jenis_kelamin" name="jenis_kelamin"
-                                value="<?=$r->jenis_kelamin?>">
+                            <label for="input_nama_sepatu" class="form-label">Id Pemasok</label>
+                            <input type="text" class="form-control" id="input_nama_sepatu" name="id_pemasok"
+                                value="<?= $r->id_pemasok ?>">
                         </div>
                         <div class="mb-3 col-md-6">
-                            <label for="input_alamat" class="form-label">Alamat</label>
-                            <input type="text" class="form-control" id="input_alamat" name="alamat"
-                                value="<?=$r->alamat?>">
+                            <label for="input_gambar_sepatu" class="form-label">Gambar Sepatu</label>
+                            <input type="text" class="form-control" id="input_gambar_sepatu" name="gambar_sepatu"
+                                value="<?= $r->gambar_sepatu ?>">
                         </div>
                         <div class="mb-3 col-md-6">
-                            <label for="input_telp" class="form-label">No Telepon</label>
-                            <input type="text" class="form-control" id="input_no_telp" name="no_telp"
-                                value="<?=$r->no_telp?>">
+                            <label for="input_ukuran" class="form-label">Ukuran</label>
+                            <input type="text" class="form-control" id="input_ukuran" name="ukuran"
+                                value="<?= $r->ukuran ?>">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="input_id_jenis" class="form-label">Id Jenis</label>
+                            <input type="text" class="form-control" id="input_id_jenis" name="id_jenis"
+                                value="<?= $r->id_jenis ?>">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="input_warna" class="form-label">Warna</label>
+                            <input type="text" class="form-control" id="input_warna" name="warna"
+                                value="<?= $r->warna ?>">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="input_stok" class="form-label">Stok</label>
+                            <input type="text" class="form-control" id="input_stok" name="stok" value="<?= $r->stok ?>">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="input_harga" class="form-label">Harga</label>
+                            <input type="text" class="form-control" id="input_harga" name="harga"
+                                value="<?= $r->harga ?>">
                         </div>
                     </div>
                     <input class="btn btn-primary" type="submit" name="ubah" value="Edit">
                     <a class="btn btn-danger" href="admin_obat.php" role="button">Cancel</a>
                 </form>
                 <?php unset($r);
-            
-            ?>
+
+                ?>
 
             </div>
         </div>
