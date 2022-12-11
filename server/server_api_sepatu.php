@@ -35,17 +35,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nama = $data->nama;
     $gambar_sepatu = $data->gambar_sepatu;
     $ukuran = $data->ukuran;
-    $id_jenis = $data->id_jenis;
+    $jenis = $data->jenis;
     $warna = $data->warna;
     $stok = $data->stok;
     $harga = $data->harga;
     $aksi = $data->aksi;
 
     if ($aksi == 'tambah') {
-        $data2 = array('id_sepatu' => $id_sepatu, 'id_pemasok' => $id_pemasok, 'nama' => $nama, 'gambar_sepatu' => $gambar_sepatu, 'ukuran' => $ukuran, 'id_jenis' => $id_jenis, 'warna' => $warna, 'stok' => $stok, 'harga' => $harga);
+        $data2 = array('id_sepatu' => $id_sepatu, 'id_pemasok' => $id_pemasok, 'nama' => $nama, 'gambar_sepatu' => $gambar_sepatu, 'ukuran' => $ukuran, 'jenis' => $jenis, 'warna' => $warna, 'stok' => $stok, 'harga' => $harga);
         $abc->tambah_data_sepatu($data2);
     } elseif ($aksi == 'ubah') {
-        $data2 = array('id_sepatu' => $id_sepatu, 'id_pemasok' => $id_pemasok, 'nama' => $nama, 'gambar_sepatu' => $gambar_sepatu, 'ukuran' => $ukuran, 'id_jenis' => $id_jenis, 'warna' => $warna, 'stok' => $stok, 'harga' => $harga);
+        $data2 = array('id_sepatu' => $id_sepatu, 'id_pemasok' => $id_pemasok, 'nama' => $nama, 'gambar_sepatu' => $gambar_sepatu, 'ukuran' => $ukuran, 'jenis' => $jenis, 'warna' => $warna, 'stok' => $stok, 'harga' => $harga);
         $abc->ubah_data_sepatu($data2);
     } elseif ($aksi == 'hapus') {
         $abc->hapus_data_sepatu($id_sepatu);

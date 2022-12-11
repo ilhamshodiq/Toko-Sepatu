@@ -51,7 +51,7 @@ class ClientSepatu
             "nama":"' . $data['nama'] . '",
             "gambar_sepatu":"' . $data['gambar_sepatu'] . '",
             "ukuran":"' . $data['ukuran'] . '",
-            "id_jenis":"' . $data['id_jenis'] . '",
+            "jenis":"' . $data['jenis'] . '",
             "warna":"' . $data['warna'] . '",
             "stok":"' . $data['stok'] . '",
             "harga":"' . $data['harga'] . '",                    
@@ -74,7 +74,7 @@ class ClientSepatu
                     "nama":"' . $data['nama'] . '",
                     "gambar_sepatu":"' . $data['gambar_sepatu'] . '",
                     "ukuran":"' . $data['ukuran'] . '",
-                    "id_jenis":"' . $data['id_jenis'] . '",
+                    "jenis":"' . $data['jenis'] . '",
                     "warna":"' . $data['warna'] . '",
                     "stok":"' . $data['stok'] . '",
                     "harga":"' . $data['harga'] . '",                    
@@ -116,6 +116,6 @@ class ClientSepatu
 
 
 //nb ini ubah localhost pake ip sesuai dengan ip servernya
-$url = 'http://localhost/Toko-Sepatu-Design-Web-Responsive--master/server/server_api_sepatu.php';
+$url = 'localhost/toko_sepatu/server/server_api_sepatu.php';
 // buat objek baru dari class Client
 $abc = new ClientSepatu($url);

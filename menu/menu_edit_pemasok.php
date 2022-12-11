@@ -28,17 +28,17 @@ include "../client/Client_pemasok.php";
         </div>
     </nav>
 
-    <div class="d-flex bg-dark text-white" id="wrapper">
+    <div class="d-flex bg-info text-white" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-dark" id="sidebar-wrapper">
             <div class="list-group list-group-flush my-3">
                 <a href="menu_dashboard.php"
-                    class="list-group-item list-group-item-action bg-transparent second-text"><i
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-home me-2"></i>Dashboard</a>
                 <a href="menu_sepatu.php"
                     class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-database me-2"></i>Sepatu</a>
-                <a href="menu_pemasok.php"
+                <a style="color:azure;" href="menu_pemasok.php"
                     class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"><i
                         class="fas fa-database me-2"></i>Pemasok</a>
             </div>
@@ -86,7 +86,7 @@ include "../client/Client_pemasok.php";
                         </div>
                     </div>
                     <input class="btn btn-primary" type="submit" name="ubah" value="Edit">
-                    <a class="btn btn-danger" href="admin_obat.php" role="button">Cancel</a>
+                    <a class="btn btn-danger" href="../menu/menu_pemasok.php" role="button">Cancel</a>
                 </form>
                 <?php unset($r);
             

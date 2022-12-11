@@ -11,9 +11,12 @@ include "../client/Client_sepatu.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- bootstrap 5.2 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- fontawesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- css buatan sendiri -->
     <link rel="stylesheet" href="../css/style_dashboard.css">
 
@@ -28,13 +31,19 @@ include "../client/Client_sepatu.php";
         </div>
     </nav>
 
-    <div class="d-flex bg-dark text-white" id="wrapper">
+    <div class="d-flex bg-info text-white" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-dark" id="sidebar-wrapper">
             <div class="list-group list-group-flush my-3">
-                <a href="menu_dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text "><i class="fas fa-home me-2"></i>Dashboard</a>
-                <a href="menu_sepatu.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"><i class="fas fa-database me-2"></i>Sepatu</a>
-                <a href="menu_pemasok.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-database me-2"></i>Pemasok</a>
+                <a href="menu_dashboard.php"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-home me-2"></i>Dashboard</a>
+                <a style="color:azure;" href="menu_sepatu.php"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"><i
+                        class="fas fa-database me-2"></i>Data Sepatu</a>
+                <a href="menu_pemasok.php"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-database me-2"></i>Data Pemasok</a>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -71,27 +80,30 @@ include "../client/Client_sepatu.php";
                         $data_array = $abc->tampil_semua_data_sepatu();
                         foreach ($data_array as $r) {
                         ?>
-                            <tr>
-                                <th scope="row"><?= $no++ ?></th>
-                                <td> <?= $r->id_pemasok; ?></td>
-                                <td> <?= $r->nama; ?></td>
-                                <td><img width="100" src="<?= $r->gambar_sepatu; ?>"></td>
-                                <td> <?= $r->ukuran; ?></td>
-                                <td> <?= $r->id_jenis; ?></td>
-                                <td> <?= $r->warna; ?></td>
-                                <td> <?= $r->stok; ?></td>
-                                <td> Rp.<?= $r->harga; ?></td>
+                        <tr>
+                            <th scope="row"><?= $no++ ?></th>
+                            <td> <?= $r->id_pemasok; ?></td>
+                            <td> <?= $r->nama; ?></td>
+                            <td><img width="100" src="<?= $r->gambar_sepatu; ?>"></td>
+                            <td> <?= $r->ukuran; ?></td>
+                            <td> <?= $r->jenis; ?></td>
+                            <td> <?= $r->warna; ?></td>
+                            <td> <?= $r->stok; ?></td>
+                            <td> Rp.<?= $r->harga; ?></td>
 
-                                <td>
-                                    <form action="menu_edit_sepatu.php?id_sepatu=<?php echo $r->id_sepatu ?>" method="post">
-                                        <input class="btn btn-success btn-sm" type="submit" value="edit">
-                                    </form>
-                                    <p></p>
-                                    <form action="../client/proses_sepatu.php?aksi=hapus&id_sepatu=<?php echo $r->id_sepatu ?>" method="post">
-                                        <input class="btn btn-danger btn-sm" type="submit" name="hapus" value="hapus" onClick="return confirm('Apakah Anda ingin menghapus data Sepatu?')">
-                                    </form>
-                                </td>
-                            </tr>
+                            <td>
+                                <form action="menu_edit_sepatu.php?id_sepatu=<?php echo $r->id_sepatu ?>" method="post">
+                                    <input class="btn btn-success btn-sm" type="submit" value="edit">
+                                </form>
+                                <p></p>
+                                <form
+                                    action="../client/proses_sepatu.php?aksi=hapus&id_sepatu=<?php echo $r->id_sepatu ?>"
+                                    method="post">
+                                    <input class="btn btn-danger btn-sm" type="submit" name="hapus" value="hapus"
+                                        onClick="return confirm('Apakah Anda ingin menghapus data Sepatu?')">
+                                </form>
+                            </td>
+                        </tr>
                         <?php
 
                         }
@@ -104,8 +116,8 @@ include "../client/Client_sepatu.php";
     </div>
     <!-- /#page-content-wrapper -->
 
-    <!-- <footer class="bg-dark pb-3 pt-4">
-        <p class="text-center text-white bg-dark">Created with love by Ilham Shodiq</p>
+    <!-- <footer class="bg-info pb-3 pt-4">
+        <p class="text-center text-white bg-info">Created with love by Ilham Shodiq</p>
     </footer> -->
 
     <footer class="bg-dark text-center text-white p-4">
@@ -145,7 +157,7 @@ include "../client/Client_sepatu.php";
                         </a>
                     </li>
                 </ul>
-                <div class="small text-center">Created with love by Ilham Shodiq</div>
+                <div class="small text-center">Created by Toko Sepatu</div>
             </div>
         </div>
     </footer>
@@ -154,15 +166,16 @@ include "../client/Client_sepatu.php";
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>
     <script>
-        var el = document.getElementById("wrapper");
-        var toggleButton = document.getElementById("menu-toggle");
+    var el = document.getElementById("wrapper");
+    var toggleButton = document.getElementById("menu-toggle");
 
-        toggleButton.onclick = function() {
-            el.classList.toggle("toggled");
-        };
+    toggleButton.onclick = function() {
+        el.classList.toggle("toggled");
+    };
     </script>
 </body>
 

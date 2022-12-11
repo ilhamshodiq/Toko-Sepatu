@@ -28,7 +28,7 @@ include "../client/Client_pemasok.php";
         </div>
     </nav>
 
-    <div class="d-flex bg-dark text-white" id="wrapper">
+    <div class="d-flex bg-info text-white" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-dark" id="sidebar-wrapper">
             <div class="list-group list-group-flush my-3">
@@ -37,10 +37,10 @@ include "../client/Client_pemasok.php";
                         class="fas fa-home me-2"></i>Dashboard</a>
                 <a href="menu_sepatu.php"
                     class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-database me-2"></i>Sepatu</a>
-                <a href="menu_pemasok.php"
+                        class="fas fa-database me-2"></i>Data Sepatu</a>
+                <a style="color: azure;" href="menu_pemasok.php"
                     class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"><i
-                        class="fas fa-database me-2"></i>Pemasok</a>
+                        class="fas fa-database me-2"></i>Data Pemasok</a>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->

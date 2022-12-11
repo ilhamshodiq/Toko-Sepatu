@@ -28,19 +28,19 @@ include "../client/Client_sepatu.php";
         </div>
     </nav>
 
-    <div class="d-flex bg-dark text-white" id="wrapper">
+    <div class="d-flex bg-info text-white" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-dark" id="sidebar-wrapper">
             <div class="list-group list-group-flush my-3">
                 <a href="menu_dashboard.php"
-                    class="list-group-item list-group-item-action bg-transparent second-text"><i
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-home me-2"></i>Dashboard</a>
-                <a href="menu_sepatu.php"
+                <a style="color: azure;" href="menu_sepatu.php"
                     class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"><i
-                        class="fas fa-database me-2"></i>Sepatu</a>
+                        class="fas fa-database me-2"></i>Data Sepatu</a>
                 <a href="menu_pemasok.php"
                     class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-database me-2"></i>Pemasok</a>
+                        class="fas fa-database me-2"></i>Data Pemasok</a>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -85,9 +85,9 @@ include "../client/Client_sepatu.php";
                                 value="<?= $r->ukuran ?>">
                         </div>
                         <div class="mb-3 col-md-6">
-                            <label for="input_id_jenis" class="form-label">Id Jenis</label>
-                            <input type="text" class="form-control" id="input_id_jenis" name="id_jenis"
-                                value="<?= $r->id_jenis ?>">
+                            <label for="input_jenis" class="form-label">Jenis</label>
+                            <input type="text" class="form-control" id="input_jenis" name="jenis"
+                                value="<?= $r->jenis ?>">
                         </div>
                         <div class="mb-3 col-md-6">
                             <label for="input_warna" class="form-label">Warna</label>
@@ -105,7 +105,7 @@ include "../client/Client_sepatu.php";
                         </div>
                     </div>
                     <input class="btn btn-primary" type="submit" name="ubah" value="Edit">
-                    <a class="btn btn-danger" href="admin_obat.php" role="button">Cancel</a>
+                    <a class="btn btn-danger" href="../menu/menu_sepatu.php" role="button">Cancel</a>
                 </form>
                 <?php unset($r);
 
@@ -117,7 +117,7 @@ include "../client/Client_sepatu.php";
     <!-- /#page-content-wrapper -->
 
     <!-- <footer class="bg-dark pb-3 pt-4">
-        <p class="text-center text-white bg-dark">Created with love by Ilham Shodiq</p>
+        <p class="text-center text-white bg-info">Created with love by Ilham Shodiq</p>
     </footer> -->
     <footer class="bg-dark text-center text-white p-4">
         <div class="row gx-4 gx-lg-5 justify-content-center">
