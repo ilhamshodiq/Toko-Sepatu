@@ -108,6 +108,6 @@ class ClientPemasok
 
 
 //nb ini ubah localhost pake ip sesuai dengan ip servernya
-$url = 'localhost/toko_sepatu/server/server_api_pemasok.php';
+$url = 'localhost/Toko-Sepatu-Design-Web-Responsive--master/server/server_api_pemasok.php';
 // buat objek baru dari class Client
 $abcd = new ClientPemasok($url);

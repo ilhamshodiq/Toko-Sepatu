@@ -116,6 +116,6 @@ class ClientSepatu
 
 
 //nb ini ubah localhost pake ip sesuai dengan ip servernya
-$url = 'localhost/toko_sepatu/server/server_api_sepatu.php';
+$url = 'localhost/Toko-Sepatu-Design-Web-Responsive--master/server/server_api_sepatu.php';
 // buat objek baru dari class Client
 $abc = new ClientSepatu($url);

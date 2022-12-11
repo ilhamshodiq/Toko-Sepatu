@@ -49,7 +49,7 @@ include "../client/Client_sepatu.php";
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <div id="page-content-wrapper">
+        <div id="page-content-wrapper" style="background-color: #9BA1A8;">
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
@@ -157,7 +157,7 @@ include "../client/Client_sepatu.php";
                         </a>
                     </li>
                 </ul>
-                <div class="small text-center">Created by Toko Sepatu</div>
+                <div class="small text-center">Created with love by Ilham Shodiq</div>
             </div>
         </div>
     </footer>
