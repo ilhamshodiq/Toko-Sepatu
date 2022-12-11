@@ -77,7 +77,7 @@ unset($data_array, $r);
             <div class="row" style="padding-left: 25px;">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12" style="padding-bottom: 20px;">
                     <div class="row">
-                        <div class="row row-cols-1 row-cols-md-4 g-4">
+                        <div class="row row-cols-1 row-cols-md-4 g-2">
                             <div class="col">
                                 <div class="card" style="width: 296px;">
                                     <img src="../img/running/shoesinfo.png" class="card-img-top" alt="... " style=" height: 240px; background-color: darkslategray;">
