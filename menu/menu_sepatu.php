@@ -63,7 +63,7 @@ include "../client/Client_sepatu.php";
                     <thead>
                         <tr>
                             <th scope="col" width="50">#</th>
-                            <th scope="col">id pemasok</th>
+                            <th scope="col">Nama Pemasok</th>
                             <th scope="col">Nama Sepatu</th>
                             <th scope="col">Gambar Sepatu</th>
                             <th scope="col">Ukuran</th>
@@ -77,12 +77,12 @@ include "../client/Client_sepatu.php";
                     <tbody>
                         <?php
                         $no = 1;
-                        $data_array = $abc->tampil_semua_data_sepatu();
+                        $data_array = $abc->tampil_data_sepatu_dengan_nama_pemasok();
                         foreach ($data_array as $r) {
                         ?>
                         <tr>
                             <th scope="row"><?= $no++ ?></th>
-                            <td> <?= $r->id_pemasok; ?></td>
+                            <td> <?= $r->nama_pemasok; ?></td>
                             <td> <?= $r->nama; ?></td>
                             <td><img width="100" src="<?= $r->gambar_sepatu; ?>"></td>
                             <td> <?= $r->ukuran; ?></td>

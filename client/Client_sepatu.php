@@ -31,6 +31,18 @@ class ClientSepatu
         // menghapus variabel dari memory
         unset($data, $client, $response);
     }
+    public function tampil_data_sepatu_dengan_nama_pemasok()
+    {
+        $client = curl_init($this->url);
+        curl_setopt($client, CURLOPT_RETURNTRANSFER, 1);
+        $response = curl_exec($client);
+        curl_close($client);
+        $data = json_decode($response);
+        // mengembalikan data
+        return $data;
+        // menghapus variabel dari memory
+        unset($data, $client, $response);
+    }
 
     public function tampil_data($id_sepatu)
     {

@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo json_encode($data);
     } else // menampilkan semua data
     {
-        $data = $abc->tampil_semua_data_sepatu();
+        $data = $abc->tampil_data_sepatu_dengan_nama_pemasok();
         echo json_encode($data);
     }
 

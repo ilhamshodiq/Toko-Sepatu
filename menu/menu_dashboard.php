@@ -60,8 +60,8 @@ unset($data_array, $r);
         <div id="sidebar-wrapper" class="bg-dark">
             <div class="list-group list-group-flush my-3">
                 <a style="color:azure;" href="menu_dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i class="fas fa-home me-2"></i>Dashboard</a>
-                <a href="menu_sepatu.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-database me-2"></i>Sepatu</a>
-                <a href="menu_pemasok.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-database me-2"></i>Pemasok</a>
+                <a href="menu_sepatu.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-database me-2"></i>Data Sepatu</a>
+                <a href="menu_pemasok.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold "><i class="fas fa-database me-2"></i>Data Pemasok</a>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->

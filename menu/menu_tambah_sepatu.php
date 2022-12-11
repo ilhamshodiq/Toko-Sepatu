@@ -1,3 +1,6 @@
+<?php
+include "../client/Client_pemasok.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,9 +51,17 @@
                             <input type="text" class="form-control" id="input_id_sepatu" name="id_sepatu">
                         </div>
                         <div class="mb-3 col-md-6">
-                            <label for="input_nama_sepatu" class="form-label">Id Pemasok</label>
-                            <input type="text" class="form-control" id="input_nama_sepatu" name="id_pemasok">
-                        </div>
+                            <label for="input_pemasok" class="form-label">Nama Pemasok</label>
+                            <select class="form-select" id="input_pemasok" name="id_pemasok">
+                                <option value="">Pilih Pemasok</option>
+                                <?php
+                                $data_array = $abcd->tampil_semua_data_pemasok();
+                                foreach ($data_array as $r) {
+                                ?>
+                                    <option value=" <?= $r->id_pemasok; ?>"> <?= $r->nama_pemasok; ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>                   
                         <div class="mb-3 col-md-6">
                             <label for="input_nama_sepatu" class="form-label">Nama Sepatu</label>
                             <input type="text" class="form-control" id="input_nama_sepatu" name="nama">
